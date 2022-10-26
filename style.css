@@ -20,10 +20,10 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 100%;
 
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: minmax(100px, 1fr) 4fr;
   grid-template-rows: 100px 1fr;
 
 }
@@ -57,6 +57,7 @@ body {
   grid-row: 1 / 3;
 
   display: grid;
+  grid-template-columns: minmax(100px, 1fr);
   grid-template-rows: 150px auto auto 1fr;
   gap: 30px
 }
@@ -64,7 +65,7 @@ body {
 .sidebar > .nav-pages,
 .sidebar > .nav-backend {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(70px, 1fr);
 }
 
 .sidebar > div {
@@ -72,7 +73,7 @@ body {
 }
 
 .nav > a i {
-  margin: 8px
+  padding: 8px
 }
 
 .sidebar-header {
@@ -103,15 +104,10 @@ a {
   display: grid;
   grid-template-columns: 5fr 2fr;
   height: 30px;
-  font-weight: 500;
 }
 
 .projects-header {
   align-self: start;
-}
-
-.announcements-header {
-  align-self: end;
 }
 
 .projects-container {
@@ -124,11 +120,88 @@ a {
   background-color: white;
   border-radius: 10px;
   padding: 24px;
-  box-shadow: -6px 0 var(--primary-accent);
+  box-shadow: -6px 0 var(--primary-accent), 0 4px 4px -4px black;
 }
 
-.projects-card h1 {
+.projects-card > h1 {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.projects-card > p {
+  font-size: 14px;
+}
+
+.announcements-container,
+.trending-container {
+  padding: 16px;
+  margin-left: 16px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px -4px black;
+
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr);
+  gap: 4px;
+}
+
+.projects-header,
+.announcements-header,
+.trending-header {
+  font-weight: 600;
+}
+
+.announcements-box,
+.announcements-header,
+.trending-header {
+  padding: 10px;
+}
+
+.announcements-header,
+.trending-header {
+  margin-left: 10px
+}
+
+.announcements-box:not(:last-child) {
+  border-bottom: 1px solid var(--primary-gray);
+}
+
+.announcements-box h1 {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.announcements-box p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.trending-box {
+  padding: 10px;
+  
+  display: flex;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px
+}
+
+.user-image {
+  background-color: var(--primary-color);
+  border-radius: 80px;
+  width: 30px;
+  height: 30px;
+}
+
+.trending-box > div > h1 {
+  font-weight: 300;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.trending-box > div > p {
+  font-weight: 200;
+  font-size: 10px;
 }
