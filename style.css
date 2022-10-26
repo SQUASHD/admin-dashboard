@@ -23,7 +23,7 @@ body {
   width: 100%;
 
   display: grid;
-  grid-template-columns: minmax(100px, 1fr) 4fr;
+  grid-template-columns: minmax(180px, 280px) auto;
   grid-template-rows: 100px 1fr;
 
 }
@@ -56,6 +56,8 @@ body {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 
+  padding: 16px;
+
   display: grid;
   grid-template-columns: minmax(100px, 1fr);
   grid-template-rows: 150px auto auto 1fr;
@@ -66,10 +68,6 @@ body {
 .sidebar > .nav-backend {
   display: grid;
   grid-template-columns: minmax(70px, 1fr);
-}
-
-.sidebar > div {
-  padding: 16px;
 }
 
 .nav > a i {
